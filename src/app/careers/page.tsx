@@ -192,19 +192,21 @@ export default function CareersPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl border border-border-gray hover:shadow-lg hover:border-accent/20 transition-all duration-300"
-              >
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-accent/10 text-accent mb-4">
-                  {benefit.icon}
+              <div key={index} className="relative group">
+                <div
+                  className="p-6 rounded-xl border border-border-gray transition-all duration-300 group-hover:shadow-xl"
+                >
+                  <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-accent/10 text-accent mb-4">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-near-black mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-[15px] text-text-gray leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-near-black mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-[15px] text-text-gray leading-relaxed">
-                  {benefit.description}
-                </p>
+                <div className="absolute bottom-0 left-6 right-6 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: '#A5040C' }} />
               </div>
             ))}
           </div>
@@ -214,57 +216,45 @@ export default function CareersPage() {
       {/* Culture */}
       <section className="py-20 lg:py-28 bg-light-gray">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Visual */}
-            <div className="relative order-2 lg:order-1">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img
-                  src="/team-leadership.jpg"
-                  alt="QFS Leadership Team"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="order-1 lg:order-2">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10">
               <span className="text-[12px] font-semibold tracking-widest uppercase text-accent">
                 Our Culture
               </span>
               <h2 className="mt-4 text-3xl lg:text-4xl font-semibold text-near-black">
                 Excellence Through Collaboration
               </h2>
-              <p className="mt-6 text-lg text-text-primary leading-relaxed">
-                At QFS, we believe the best work happens when talented people collaborate openly. We foster an environment where ideas are valued regardless of seniority, and where everyone has the opportunity to contribute meaningfully.
-              </p>
-              <p className="mt-4 text-lg text-text-primary leading-relaxed">
-                Our team members come from diverse backgrounds—Big Four firms, investment banks, industry roles, and academia. This diversity of experience enriches our perspectives and strengthens our solutions.
-              </p>
-              <div className="mt-8 space-y-4">
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-[15px] text-text-primary">Flat hierarchy with open communication</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-[15px] text-text-primary">Regular knowledge sharing and training</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-[15px] text-text-primary">Mentorship from experienced partners</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-[15px] text-text-primary">Team events and social activities</span>
-                </div>
+            </div>
+            <p className="text-lg text-text-primary leading-relaxed">
+              At QFS, we believe the best work happens when talented people collaborate openly. We foster an environment where ideas are valued regardless of seniority, and where everyone has the opportunity to contribute meaningfully.
+            </p>
+            <p className="mt-4 text-lg text-text-primary leading-relaxed">
+              Our team members come from diverse backgrounds—Big Four firms, investment banks, industry roles, and academia. This diversity of experience enriches our perspectives and strengthens our solutions.
+            </p>
+            <div className="mt-8 space-y-4">
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-[15px] text-text-primary">Flat hierarchy with open communication</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-[15px] text-text-primary">Regular knowledge sharing and training</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-[15px] text-text-primary">Mentorship from experienced partners</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-[15px] text-text-primary">Team events and social activities</span>
               </div>
             </div>
           </div>
@@ -288,9 +278,9 @@ export default function CareersPage() {
 
           <div className="space-y-6">
             {openPositions.map((position, index) => (
+              <div key={index} className="relative group">
               <div
-                key={index}
-                className="p-8 rounded-2xl border border-border-gray hover:shadow-xl hover:border-accent/20 transition-all duration-300"
+                className="p-8 rounded-2xl border border-border-gray transition-all duration-300 group-hover:shadow-xl"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="flex-1">
@@ -346,6 +336,8 @@ export default function CareersPage() {
                     </a>
                   </div>
                 </div>
+              </div>
+              <div className="absolute bottom-0 left-8 right-8 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: '#A5040C' }} />
               </div>
             ))}
           </div>

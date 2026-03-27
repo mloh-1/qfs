@@ -3,16 +3,50 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const navigation = [
+const serviceCategories = [
   {
-    name: "Services",
-    href: "/services",
-    children: [
-      { name: "Financial Advisory", href: "/services/financial-advisory" },
-      { name: "Business Advisory", href: "/services/business-advisory" },
-      { name: "Sustainability & Digital", href: "/services/sustainability-digital" },
+    name: "Financial Advisory",
+    href: "/services/financial-advisory",
+    services: [
+      { name: "Finance Function Outsourcing", href: "/services/financial-advisory/finance-function-outsourcing" },
+      { name: "Controlling & Reporting", href: "/services/financial-advisory/controlling-reporting" },
+      { name: "Budgeting, Forecasting & Scenario Analysis", href: "/services/financial-advisory/budgeting-forecasting" },
+      { name: "Strategic Planning & FP&A", href: "/services/financial-advisory/strategic-planning-fpa" },
+      { name: "KPIs, Dashboards & Visualizations", href: "/services/financial-advisory/kpis-dashboards" },
+      { name: "Business Plans", href: "/services/financial-advisory/business-plans" },
+      { name: "Zero-Based Budgeting", href: "/services/financial-advisory/zero-based-budgeting" },
+      { name: "Financial Restructuring", href: "/services/financial-advisory/financial-restructuring" },
+      { name: "Prepackaged Bankruptcy Filing", href: "/services/financial-advisory/prepackaged-bankruptcy" },
+      { name: "Finance Automation", href: "/services/financial-advisory/finance-automation" },
     ],
   },
+  {
+    name: "Business Advisory",
+    href: "/services/business-advisory",
+    services: [
+      { name: "Supply Chain Management", href: "/services/business-advisory/supply-chain-management" },
+      { name: "Valuations & Assessments", href: "/services/business-advisory/valuations-assessments" },
+      { name: "Corporate Finance & Strategy", href: "/services/business-advisory/corporate-finance-strategy" },
+      { name: "Transformations, Innovations & Leadership", href: "/services/business-advisory/transformations-leadership" },
+      { name: "Mergers & Acquisitions", href: "/services/business-advisory/mergers-acquisitions" },
+      { name: "Startup Advisory", href: "/services/business-advisory/startup-advisory" },
+    ],
+  },
+  {
+    name: "Staying Relevant",
+    href: "/services/sustainability-digital",
+    services: [
+      { name: "Organizational Health", href: "/services/sustainability-digital/organizational-health" },
+      { name: "Digital Advisory", href: "/services/sustainability-digital/digital-advisory" },
+      { name: "ESG & Sustainability", href: "/services/sustainability-digital/esg-sustainability" },
+    ],
+  },
+];
+
+const navigation = [
+  { name: "The Firm", href: "/the-firm" },
+  { name: "Services", href: "/services", hasMegaMenu: true },
+  { name: "Staying Relevant", href: "/services/sustainability-digital" },
   { name: "Insights", href: "/insights" },
   { name: "About", href: "/about" },
   { name: "Careers", href: "/careers" },
@@ -20,7 +54,7 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-mid-gray">
@@ -41,15 +75,15 @@ export default function Header() {
               <div
                 key={item.name}
                 className="relative"
-                onMouseEnter={() => item.children && setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => item.hasMegaMenu && setMegaMenuOpen(true)}
+                onMouseLeave={() => item.hasMegaMenu && setMegaMenuOpen(false)}
               >
                 <Link
                   href={item.href}
                   className="text-[15px] font-medium text-dark-gray hover:text-near-black transition-colors py-2"
                 >
                   {item.name}
-                  {item.children && (
+                  {item.hasMegaMenu && (
                     <svg
                       className="inline-block ml-1 w-4 h-4"
                       fill="none"
@@ -61,19 +95,41 @@ export default function Header() {
                   )}
                 </Link>
 
-                {/* Dropdown */}
-                {item.children && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 pt-2">
-                    <div className="bg-white rounded-lg shadow-lg border border-mid-gray py-2 min-w-[220px]">
-                      {item.children.map((child) => (
+                {/* Mega Menu Dropdown */}
+                {item.hasMegaMenu && megaMenuOpen && (
+                  <div className="absolute top-full -left-4 pt-2">
+                    <div className="bg-white rounded-xl shadow-2xl border border-mid-gray p-6 min-w-[720px]">
+                      <div className="grid grid-cols-3 gap-8">
+                        {serviceCategories.map((category) => (
+                          <div key={category.name}>
+                            <Link
+                              href={category.href}
+                              className="text-[13px] font-bold uppercase tracking-wider text-accent hover:text-near-black transition-colors"
+                            >
+                              {category.name}
+                            </Link>
+                            <div className="mt-3 space-y-1.5">
+                              {category.services.map((service) => (
+                                <Link
+                                  key={service.name}
+                                  href={service.href}
+                                  className="block text-[13px] text-text-gray hover:text-near-black hover:translate-x-0.5 transition-all"
+                                >
+                                  {service.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-6 pt-4 border-t border-border-gray">
                         <Link
-                          key={child.name}
-                          href={child.href}
-                          className="block px-4 py-2.5 text-[15px] text-dark-gray hover:bg-off-white hover:text-near-black transition-colors"
+                          href="/services"
+                          className="text-[13px] font-medium text-accent hover:text-near-black transition-colors"
                         >
-                          {child.name}
+                          View All Services →
                         </Link>
-                      ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -120,31 +176,54 @@ export default function Header() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-mid-gray">
-            {navigation.map((item) => (
-              <div key={item.name}>
-                <Link
-                  href={item.href}
-                  className="block py-3 text-[15px] font-medium text-dark-gray"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-                {item.children && (
-                  <div className="pl-4 pb-2">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.name}
-                        href={child.href}
-                        className="block py-2 text-[14px] text-text-gray"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {child.name}
-                      </Link>
-                    ))}
+            {/* Services with subcategories */}
+            <div className="mb-2">
+              <Link
+                href="/services"
+                className="block py-3 text-[15px] font-medium text-dark-gray"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <div className="pl-4 pb-2">
+                {serviceCategories.map((category) => (
+                  <div key={category.name} className="mb-2">
+                    <Link
+                      href={category.href}
+                      className="block py-1.5 text-[13px] font-semibold uppercase tracking-wider text-accent"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {category.name}
+                    </Link>
+                    <div className="pl-3">
+                      {category.services.map((service) => (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          className="block py-1.5 text-[13px] text-text-gray"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                )}
+                ))}
               </div>
+            </div>
+
+            {/* Other nav items */}
+            {navigation.filter(item => !item.hasMegaMenu).map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block py-3 text-[15px] font-medium text-dark-gray"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
             ))}
+
             <Link
               href="/contact"
               className="btn-primary"

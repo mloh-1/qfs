@@ -9,7 +9,7 @@ const services = getServicesByCategory("sustainability-digital");
 const HeroBackground = () => (
   <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
     <img
-      src="/hero.jpg"
+      src="/services-staying-relevant.jpg"
       alt=""
       style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
     />
@@ -27,7 +27,7 @@ export default function SustainabilityDigitalPage() {
   return (
     <>
       {/* Hero */}
-      <section style={{ position: 'relative', backgroundColor: '#0D0D0D', paddingTop: '8rem', paddingBottom: '4rem' }}>
+      <section style={{ position: 'relative', backgroundColor: '#0D0D0D', paddingTop: '8rem', paddingBottom: '4rem', minHeight: '428px' }}>
         <HeroBackground />
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
           <nav style={{ marginBottom: '2rem' }}>

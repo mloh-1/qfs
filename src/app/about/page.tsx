@@ -47,8 +47,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2012", event: "QFS founded in Belgrade" },
-  { year: "2015", event: "Expanded to financial restructuring services" },
+  { year: "2016", event: "QFS founded in Belgrade as a business and financial advisory firm" },
   { year: "2018", event: "Launched digital transformation practice" },
   { year: "2020", event: "Added ESG & sustainability advisory" },
   { year: "2023", event: "150+ successful client engagements" },
@@ -110,20 +109,12 @@ export default function AboutPage() {
               </p>
               <div className="mt-8 grid grid-cols-2 gap-8">
                 <div>
-                  <div className="text-4xl font-bold text-accent">12+</div>
-                  <p className="mt-1 text-[15px] text-text-gray">Years of experience</p>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-accent">150+</div>
+                  <div className="text-4xl font-bold text-accent">100+</div>
                   <p className="mt-1 text-[15px] text-text-gray">Projects delivered</p>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-accent">50+</div>
                   <p className="mt-1 text-[15px] text-text-gray">Client organizations</p>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-accent">95%</div>
-                  <p className="mt-1 text-[15px] text-text-gray">Client satisfaction</p>
                 </div>
               </div>
             </div>
@@ -157,19 +148,21 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-2xl border border-border-gray hover:shadow-xl hover:border-accent/20 transition-all duration-300"
-              >
-                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-accent text-white mb-6">
-                  {value.icon}
+              <div key={index} className="relative group">
+                <div
+                  className="bg-white p-8 rounded-2xl border border-border-gray transition-all duration-300 group-hover:shadow-xl"
+                >
+                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-accent text-white mb-6">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-near-black mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-[15px] text-text-gray leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-near-black mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-[15px] text-text-gray leading-relaxed">
-                  {value.description}
-                </p>
+                <div className="absolute bottom-0 left-8 right-8 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: '#A5040C' }} />
               </div>
             ))}
           </div>

@@ -26,6 +26,7 @@ const serviceCategories = [
     title: "Financial Advisory",
     description: "Transform your finance function from cost center to strategic advantage. We deliver CFO-level expertise across the full spectrum of financial operations.",
     href: "/services/financial-advisory",
+    image: "/services-financial.jpg",
     services: [
       "Finance Function Outsourcing",
       "Controlling & Reporting",
@@ -43,6 +44,7 @@ const serviceCategories = [
     title: "Business Advisory",
     description: "Strategic clarity and operational excellence for complex business challenges. We help leadership teams navigate transactions, transformations, and growth.",
     href: "/services/business-advisory",
+    image: "/services-business.jpg",
     services: [
       "Supply Chain Management",
       "Valuations & Assessments",
@@ -53,9 +55,10 @@ const serviceCategories = [
     ],
   },
   {
-    title: "Sustainability & Digital",
+    title: "Staying Relevant",
     description: "Future-proof your organization for the demands of tomorrow. We integrate digital transformation and ESG into sustainable business models.",
     href: "/services/sustainability-digital",
+    image: "/services-staying-relevant.jpg",
     services: [
       "Organizational Health",
       "Digital Advisory",
@@ -86,6 +89,15 @@ export default function ServicesPage() {
           key={category.title}
           background={index % 2 === 0 ? "white" : "off-white"}
         >
+          {/* Category Image */}
+          <div className="rounded-xl overflow-hidden mb-10" style={{ height: '280px' }}>
+            <img
+              src={category.image}
+              alt={category.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
               <h2 className="text-3xl lg:text-4xl font-semibold text-near-black">

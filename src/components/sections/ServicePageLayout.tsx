@@ -6,11 +6,17 @@ interface ServicePageLayoutProps {
   service: Service;
 }
 
+const categoryHeroImages: Record<string, string> = {
+  "financial-advisory": "/services-financial.jpg",
+  "business-advisory": "/services-business.jpg",
+  "sustainability-digital": "/services-staying-relevant.jpg",
+};
+
 // Hero background component
-const HeroBackground = () => (
+const HeroBackground = ({ category }: { category: string }) => (
   <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
     <img
-      src="/hero.jpg"
+      src={categoryHeroImages[category] || "/hero.jpg"}
       alt=""
       style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
     />
@@ -35,7 +41,7 @@ export default function ServicePageLayout({ service }: ServicePageLayoutProps) {
     <>
       {/* Hero */}
       <section style={{ position: 'relative', backgroundColor: '#0D0D0D', paddingTop: '8rem', paddingBottom: '4rem' }}>
-        <HeroBackground />
+        <HeroBackground category={service.category} />
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
           {/* Breadcrumb */}
           <nav style={{ marginBottom: '2rem' }}>

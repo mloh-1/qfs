@@ -242,10 +242,6 @@ function BioModal({ member, onClose }: BioModalProps) {
 export default function TeamSection() {
   const [selectedMember, setSelectedMember] = useState<typeof teamMembers[0] | null>(null);
 
-  // Separate leadership (Partners) from team
-  const leadership = teamMembers.filter(m => m.role.includes("Partner"));
-  const team = teamMembers.filter(m => !m.role.includes("Partner"));
-
   return (
     <>
       <section className="py-20 lg:py-28 bg-light-gray">
@@ -262,36 +258,14 @@ export default function TeamSection() {
             </p>
           </div>
 
-          {/* Leadership */}
-          <div className="mb-12">
-            <h3 className="text-sm font-semibold tracking-widest uppercase text-text-gray mb-8 text-center">
-              Leadership
-            </h3>
-            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-              {leadership.map((member, index) => (
-                <TeamMemberCard
-                  key={index}
-                  member={member}
-                  onOpenBio={() => setSelectedMember(member)}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Team */}
-          <div>
-            <h3 className="text-sm font-semibold tracking-widest uppercase text-text-gray mb-8 text-center">
-              Advisory Team
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-              {team.map((member, index) => (
-                <TeamMemberCard
-                  key={index}
-                  member={member}
-                  onOpenBio={() => setSelectedMember(member)}
-                />
-              ))}
-            </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6">
+            {teamMembers.map((member, index) => (
+              <TeamMemberCard
+                key={index}
+                member={member}
+                onOpenBio={() => setSelectedMember(member)}
+              />
+            ))}
           </div>
         </div>
       </section>

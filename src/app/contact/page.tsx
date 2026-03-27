@@ -302,8 +302,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#171717', marginBottom: '0.25rem' }}>Email</h3>
-                    <a href="mailto:contact@qfs.rs" style={{ color: '#A5040C', textDecoration: 'none', fontSize: '0.9375rem' }}>
-                      contact@qfs.rs
+                    <a href="mailto:info@qfs.rs" style={{ color: '#A5040C', textDecoration: 'none', fontSize: '0.9375rem' }}>
+                      info@qfs.rs
                     </a>
                   </div>
                 </div>
@@ -317,8 +317,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#171717', marginBottom: '0.25rem' }}>Phone</h3>
-                    <a href="tel:+381111234567" style={{ color: '#A5040C', textDecoration: 'none', fontSize: '0.9375rem' }}>
-                      +381 11 123 4567
+                    <a href="tel:+381628820811" style={{ color: '#A5040C', textDecoration: 'none', fontSize: '0.9375rem' }}>
+                      +381 62 8820 811
                     </a>
                   </div>
                 </div>

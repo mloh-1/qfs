@@ -4,9 +4,10 @@ const footerLinks = {
   services: [
     { name: "Financial Advisory", href: "/services/financial-advisory" },
     { name: "Business Advisory", href: "/services/business-advisory" },
-    { name: "Sustainability & Digital", href: "/services/sustainability-digital" },
+    { name: "Staying Relevant", href: "/services/sustainability-digital" },
   ],
   company: [
+    { name: "The Firm", href: "/the-firm" },
     { name: "About", href: "/about" },
     { name: "Careers", href: "/careers" },
     { name: "Insights", href: "/insights" },

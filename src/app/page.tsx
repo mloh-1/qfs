@@ -524,20 +524,25 @@ export default function Home() {
               { metric: "200+", description: "Jobs preserved through successful restructurings" },
               { metric: "6 weeks", description: "Average time to investor-ready financials" }
             ].map((item, index) => (
-              <div
-                key={index}
-                className="text-center p-8 rounded-2xl"
-                style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5' }}
-              >
+              <div key={index} className="relative group">
                 <div
-                  className="text-4xl lg:text-5xl font-bold mb-3"
-                  style={{ color: '#A5040C' }}
+                  className="text-center p-8 rounded-2xl transition-all duration-300 group-hover:shadow-xl"
+                  style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5' }}
                 >
-                  {item.metric}
+                  <div
+                    className="text-4xl lg:text-5xl font-bold mb-3"
+                    style={{ color: '#A5040C' }}
+                  >
+                    {item.metric}
+                  </div>
+                  <p className="text-[15px]" style={{ color: '#737373' }}>
+                    {item.description}
+                  </p>
                 </div>
-                <p className="text-[15px]" style={{ color: '#737373' }}>
-                  {item.description}
-                </p>
+                <div
+                  className="absolute bottom-0 left-8 right-8 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ backgroundColor: '#A5040C' }}
+                />
               </div>
             ))}
           </div>
@@ -583,8 +588,8 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden">
                 <img
-                  src="/team-leadership.jpg"
-                  alt="QFS Leadership Team"
+                  src="/firm-values.jpg"
+                  alt="QFS Advisory"
                   className="w-full h-full object-cover"
                 />
               </div>
