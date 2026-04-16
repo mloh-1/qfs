@@ -104,7 +104,7 @@ const openPositions = [
     ],
   },
   {
-    title: "Senior Manager - ESG & Sustainability",
+    title: "Analyst - ESG & Sustainability",
     location: "Belgrade",
     type: "Full-time",
     description: "Lead our growing sustainability practice, helping clients navigate ESG reporting requirements and develop sustainability strategies. Looking for candidates with 7+ years of experience.",

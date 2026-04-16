@@ -188,7 +188,7 @@ function WhoWeAre() {
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-[900px] mx-auto px-6 lg:px-8 text-center">
           <p className="text-2xl lg:text-3xl font-semibold text-near-black leading-snug">
-            In short, we are <span className="underline decoration-accent decoration-2 underline-offset-4">LOYAL</span> to our clients, <span className="underline decoration-accent decoration-2 underline-offset-4">INVINCIBLE</span> to the market and <span className="underline decoration-accent decoration-2 underline-offset-4">DEDICATED</span> to Your success.
+            In short, we are <span className="underline decoration-accent decoration-2 underline-offset-4">LOYAL</span> to our clients, <span className="underline decoration-accent decoration-2 underline-offset-4">EXCELLENT</span> in the market and <span className="underline decoration-accent decoration-2 underline-offset-4">DEDICATED</span> to Your success.
           </p>
         </div>
       </section>

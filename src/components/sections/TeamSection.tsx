@@ -88,6 +88,16 @@ With more than seven years of professional experience, Tamara has built a divers
 Her scope of work includes finance function outsourcing, financial analysis, business reporting, benchmarking, and client relationship management. Tamara is recognized for her strong organizational skills, communication abilities, and persistence, thriving both independently and in team-oriented environments.`,
     credentials: ["Business Academy Novi Sad"],
   },
+  {
+    name: "Other Coworkers",
+    role: "Our Extended Team",
+    photo: "/firm-section1.jpg",
+    shortBio: "A broader group of talented professionals who support our engagements across financial advisory, analysis, and operations.",
+    fullBio: `Beyond our named leadership and consultants, QFS is powered by a broader group of talented professionals who contribute to our engagements across financial advisory, analysis, reporting, and operations.
+
+Their combined expertise, diverse backgrounds, and commitment to excellence enable us to consistently deliver high-quality outcomes for our clients. We value every member of the team and recognize that our success is built on their collective effort.`,
+    credentials: [],
+  },
 ];
 
 interface TeamMemberCardProps {
