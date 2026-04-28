@@ -42,10 +42,10 @@ Anđela has over five years of experience in financial and business advisory, wi
   },
   {
     name: "Neda Zloporubović",
-    role: "Manager – Supply Chain",
+    role: "Consultant – Supply Chain",
     photo: "/team/Neda Zloporubovic.jpg",
     shortBio: "Over nine years of international experience in procurement and supply chain leadership across automotive, manufacturing, and energy sectors.",
-    fullBio: `Neda Zloporubović is a Manager specializing in Supply Chain Advisory at QFS. She earned a Bachelor's degree in Business Economics from Singidunum University in Belgrade and a Master's degree in Internal Audit from the same institution. She is currently a PhD candidate in Business Management and Organization.
+    fullBio: `Neda Zloporubović is a Consultant specializing in Supply Chain Advisory at QFS. She earned a Bachelor's degree in Business Economics from Singidunum University in Belgrade and a Master's degree in Internal Audit from the same institution. She is currently a PhD candidate in Business Management and Organization.
 
 Neda brings over nine years of international experience in procurement and supply chain leadership across automotive, manufacturing, and energy sectors. Prior to joining QFS in October 2023, she held senior roles in international corporations, including positions in project, commodity, and strategic procurement.
 
